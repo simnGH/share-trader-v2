@@ -1,0 +1,45 @@
+body {
+    font-size: 0.75em;
+    background-color: #f2f5ff;
+    font-family: 'Abel', sans-serif;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+.largetext {
+    font-size: 1em;
+}
+
+.content {
+    max-width: 500px;
+    margin: auto;
+}
+
+#aboutText {
+    padding: 20px;
+}
+
+.branding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.newseasonbutton {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+/* .teamsRow {
+    background-color:inherit;
+}
+
+.teamsCell {
+    background-color:inherit;
+} */

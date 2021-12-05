@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Share Trader 2.0</title>
+    <link rel="shortcut icon" type="image/png" href="logo.png"/>
+</head>
+<body>
+  <div class="content">
+    <header>
+      <div class="branding">
+        <img src="logo.png" alt="Hexagon Logo" width="50px" height="50px">
+        <h3>Sports Shares Index</h3>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>Season:</td>
+            <td><span id="season">2021/2022</span></td>
+          </tr>
+          <tr>
+            <td>Portfolio value (including cash):</td>
+            <td><span id="portfolioValue"></span></td>
+          </tr>
+          <tr>
+            <td>Cash Balance:</td>
+            <td><span id="userBal"></span></td>
+          </tr>
+          <tr>
+            <td>Last season's management fee (2% of portfolio value):</td>
+            <td><span id="managementFee"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="newseasonbutton">
+        <button type="button" onclick="newSeason()">New season</button>
+      </div>
+    </header>
+    <main>
+      <!-- Div below logo to show separate tabs -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="shares-tab" data-bs-toggle="tab" data-bs-target="#shareList" type="button" role="tab" aria-controls="shareList" aria-selected="true">Share List</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="portfolio-tab" data-bs-toggle="tab" data-bs-target="#portfolio" type="button" role="tab" aria-controls="portfolio" aria-selected="false">Portfolio</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false">About</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="shareList" role="tabpanel" aria-labelledby="shareList-tab">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Team</th>
+                <th scope="col">Price</th>
+                <th scope="col">+/-</th>
+                <th scope="col">Div.</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Buy</th>
+                <th scope="col">Sell</th>
+              </tr>
+            </thead>
+            <tbody id="teamList"></tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade" id="portfolio" role="tabpanel" aria-labelledby="portfolio-tab">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Team</th>
+                <th scope="col">Price</th>
+                <th scope="col">+/-</th>
+                <th scope="col">Div.</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Sell</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>Cash</td>
+                <td></td>
+                <td></td>         
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span id="userBalance"></span></td>
+              </tr>    
+
+            </tbody>
+            <tbody id="portfolioList"></tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+          <div id="aboutText">
+            <h6>About</h6>
+            <p>Buy up a portfolio of shares, click on "New Season", and see how your portfolio has grown (or shrunk) as dividends and share values fluctuate.</p>
+            <p>Dividends will be between 1% and 10% of a shares current value; no dividend is given if a share falls in value.</p>
+            <p>There is no admin fee for buying shares, but a 1.5% fee for selling (or cashing in your shares), and a 2% annual management fee on your entire portfolio (excluding your cash balance.</p>
+          </div>
+        </div>
+      </div>
+    </main>    
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
